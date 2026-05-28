@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
+import fs from 'node:fs';
 
 function readInput(pathArg) {
   if (pathArg) {
