@@ -5,13 +5,13 @@ Small Node.js CLI that reads JSON from a file (or stdin), sorts object keys recu
 ## Usage
 
 ```bash
-node json_pretty.js sample-input.json
+node json_pretty.mjs sample-input.json
 ```
 
 Or with stdin:
 
 ```bash
-cat sample-input.json | node json_pretty.js
+cat sample-input.json | node json_pretty.mjs
 ```
 
 ## Example
