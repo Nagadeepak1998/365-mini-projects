@@ -1,0 +1,10 @@
+{
+  "type": "object",
+  "required": ["incident_id", "severity", "action"],
+  "properties": {
+    "incident_id": {"type": "string"},
+    "severity": {"type": "string", "enum": ["low", "medium", "high"]},
+    "action": {"type": "string"},
+    "confidence": {"type": "number"}
+  }
+}
