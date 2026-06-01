@@ -1,0 +1,4 @@
+Run pip install -r requirements.txt
+Collecting private-package==1.2.3
+  Could not resolve host: pypi.org
+ERROR: Could not install packages due to an OSError: [Errno -3] Temporary failure in name resolution
