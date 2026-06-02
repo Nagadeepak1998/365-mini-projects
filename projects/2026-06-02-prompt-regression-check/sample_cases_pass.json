@@ -1,0 +1,16 @@
+[
+  {
+    "name": "incident rollback guidance",
+    "actual": "Investigate the deployment error, roll back the release if customer impact grows, and post the update in Slack.",
+    "required_terms": ["deployment error", "roll back", "Slack"],
+    "forbidden_terms": ["password", "secret key"],
+    "min_length": 60
+  },
+  {
+    "name": "support reply guardrail",
+    "actual": "Acknowledge the bug, share the next diagnostic step, and avoid promising a production fix date until engineering confirms it.",
+    "required_terms": ["bug", "diagnostic step", "engineering"],
+    "forbidden_terms": ["guarantee", "root password"],
+    "min_length": 70
+  }
+]

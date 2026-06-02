@@ -1,0 +1,16 @@
+[
+  {
+    "name": "missing rollback advice",
+    "actual": "Investigate the incident and share another update soon.",
+    "required_terms": ["roll back", "incident"],
+    "forbidden_terms": ["password"],
+    "min_length": 40
+  },
+  {
+    "name": "forbidden secret mention",
+    "actual": "Tell the team the password rotation is complete and confirm the fix.",
+    "required_terms": ["team", "fix"],
+    "forbidden_terms": ["password"],
+    "min_length": 30
+  }
+]
