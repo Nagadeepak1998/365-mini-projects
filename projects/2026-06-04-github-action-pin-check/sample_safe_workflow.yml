@@ -1,0 +1,13 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: vendor/example-action@v2.3.1
+      - uses: another/example-action@3f2c1a9b7e8d6c5b4a3f2109876543210fedcba9
