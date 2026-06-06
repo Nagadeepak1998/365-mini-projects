@@ -1,0 +1,7 @@
+2026-06-06T08:11:02Z level=INFO service=checkout status=200 latency_ms=142 msg="request complete"
+2026-06-06T08:11:09Z level=ERROR service=checkout status=502 latency_ms=184 msg="upstream returned bad gateway"
+2026-06-06T08:11:13Z level=WARN service=search status=200 latency_ms=1688 msg="request complete"
+2026-06-06T08:11:18Z level=ERROR service=worker msg="job timed out while waiting for vector store"
+2026-06-06T08:11:21Z level=ERROR service=api status=429 latency_ms=96 msg="rate limit exceeded for embedding batch"
+2026-06-06T08:11:25Z level=ERROR service=sync msg="connection refused from internal webhook endpoint"
+2026-06-06T08:11:29Z level=ERROR service=ingest msg="Traceback: ValueError while parsing document metadata"
