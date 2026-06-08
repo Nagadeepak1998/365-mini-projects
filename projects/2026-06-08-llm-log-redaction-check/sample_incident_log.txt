@@ -1,0 +1,6 @@
+2026-06-08T09:11:42Z INFO oncall opened ticket for api-team@example.com
+2026-06-08T09:12:03Z WARN retrying upstream from 10.24.8.19
+2026-06-08T09:12:09Z DEBUG Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9
+2026-06-08T09:12:10Z DEBUG export API_KEY=super-secret-demo-key
+2026-06-08T09:12:11Z DEBUG slack_token=xoxb-123456789012-demo-token
+2026-06-08T09:12:12Z DEBUG aws_access_key_id=AKIA1234567890ABCDEF
