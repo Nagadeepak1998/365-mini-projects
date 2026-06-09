@@ -1,0 +1,3 @@
+Acme runbook: billing export failures usually happen after the queue consumer loses access to the object store.
+Check the last deployment timestamp, compare IAM changes, and inspect the worker logs for 403 errors.
+If the issue started after a config rollout, revert the bucket policy and rerun the export job.
