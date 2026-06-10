@@ -1,0 +1,13 @@
+services:
+  postgres:
+    image: postgres:latest
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=supersecret123
+
+  worker:
+    image: docker:latest
+    privileged: true
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
