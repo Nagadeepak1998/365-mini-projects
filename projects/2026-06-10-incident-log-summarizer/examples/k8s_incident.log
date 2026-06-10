@@ -1,0 +1,5 @@
+2026-06-10T09:00:01Z INFO rollout started deployment/payment-api image=registry.example.com/payment-api:2026.06.10
+2026-06-10T09:01:12Z ERROR pod/payment-api-78d9 readiness probe failed: connection refused
+2026-06-10T09:01:40Z WARN Back-off restarting failed container payment-api in pod/payment-api-78d9
+2026-06-10T09:02:01Z ERROR last state terminated: OOMKilled exit code 137
+2026-06-10T09:02:35Z ERROR upstream connect error or disconnect/reset before headers

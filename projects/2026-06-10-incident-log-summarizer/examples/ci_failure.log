@@ -1,0 +1,4 @@
+2026-06-10T14:22:01Z INFO Running pytest
+2026-06-10T14:22:18Z ERROR failed test tests/test_checkout.py::test_payment_timeout
+2026-06-10T14:22:18Z AssertionError: expected status 200 but got 503
+2026-06-10T14:22:19Z ERROR i/o timeout calling https://payments.internal/authorize
