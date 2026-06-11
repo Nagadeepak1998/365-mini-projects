@@ -6,7 +6,7 @@ The goal is not fake GitHub activity. Each project should be explainable in an i
 
 ## Featured Portfolio Projects
 
-- [`2026-06-10-cinematic-streaming-hero`](projects/2026-06-10-cinematic-streaming-hero) - React/Tailwind full-viewport streaming hero with background video, liquid-glass controls, responsive navigation, and visible `Built By Nagadeepak` credit.
+- [`2026-06-10-cinematic-streaming-hero`](projects/2026-06-10-cinematic-streaming-hero) - React/Tailwind streaming homepage with cinematic video hero, movie/series/review sections, liquid-glass controls, responsive navigation, and visible `Built By Nagadeepak` credit.
 - [`2026-06-10-incident-log-summarizer`](projects/2026-06-10-incident-log-summarizer) - Python CLI that summarizes Kubernetes, CI, and application logs into severity, evidence, probable cause, and runbook-style next actions.
 - [`2026-06-10-compose-risk-check`](projects/2026-06-10-compose-risk-check) - Docker Compose risk checker for common production-readiness issues.
 - [`2026-06-09-rag-context-risk-check`](projects/2026-06-09-rag-context-risk-check) - RAG context risk checker for prompt-injection style context issues.
