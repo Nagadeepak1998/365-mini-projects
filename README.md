@@ -1,31 +1,29 @@
 # 365 Mini Projects
 
-Small, practical engineering projects focused on AI/ML, DevOps automation, cloud, CI/CD, Kubernetes, Terraform, observability, and platform engineering.
+I use this repo to build small, hands-on engineering projects around AI, DevOps, cloud, CI/CD, Kubernetes, Terraform, observability, and platform engineering.
 
-The goal is not fake GitHub activity. Each project should be explainable in an interview, include a clear README, and demonstrate a real engineering skill in a small scope.
+Most folders are intentionally small. The goal is to practice one useful idea at a time, keep the code runnable, and document enough context so I can revisit the project later.
 
-## Featured Portfolio Projects
+## Recent Builds
 
 - [`2026-06-12-vault-policy-drift-check`](projects/2026-06-12-vault-policy-drift-check) - Vault ACL policy review CLI that flags risky capability drift, wildcard writes, and dangerous access expansion on sensitive paths.
-- [`2026-06-12-llm-runbook-drift-check`](projects/2026-06-12-llm-runbook-drift-check) - AI/DevOps CLI that checks LLM-generated incident runbooks for missing actions, weak grounding, unsupported claims, and risky mitigation advice.
-- [`2026-06-10-cinematic-streaming-hero`](projects/2026-06-10-cinematic-streaming-hero) - React/Tailwind streaming homepage with cinematic video hero, movie/series/review sections, liquid-glass controls, responsive navigation, and visible `Built By Nagadeepak` credit.
-- [`2026-06-10-incident-log-summarizer`](projects/2026-06-10-incident-log-summarizer) - Python CLI that summarizes Kubernetes, CI, and application logs into severity, evidence, probable cause, and runbook-style next actions.
+- [`2026-06-12-llm-runbook-drift-check`](projects/2026-06-12-llm-runbook-drift-check) - Checks AI-generated incident runbooks against required evidence and safe response steps.
+- [`2026-06-10-cinematic-streaming-hero`](projects/2026-06-10-cinematic-streaming-hero) - React/Tailwind streaming UI with a video hero, content sections, glass-style controls, and responsive navigation.
+- [`2026-06-10-incident-log-summarizer`](projects/2026-06-10-incident-log-summarizer) - Python CLI that turns Kubernetes, CI, and application logs into a short incident summary with next steps.
 - [`2026-06-10-compose-risk-check`](projects/2026-06-10-compose-risk-check) - Docker Compose risk checker for common production-readiness issues.
 - [`2026-06-09-rag-context-risk-check`](projects/2026-06-09-rag-context-risk-check) - RAG context risk checker for prompt-injection style context issues.
 - [`2026-06-08-llm-log-redaction-check`](projects/2026-06-08-llm-log-redaction-check) - Log redaction utility for secrets and PII before sending logs to LLM tools.
 - [`2026-06-07-workflow-permission-check`](projects/2026-06-07-workflow-permission-check) - GitHub Actions least-privilege permission checker.
 
-## Project Standards
+## How I Use This Repo
 
-Professional projects should include:
+Each project usually includes:
 
-- problem statement and real-world use case
-- setup and run instructions
-- tests or deterministic verification where possible
-- GitHub Actions workflow when useful
-- Dockerfile when useful
-- no hardcoded secrets
-- a short demo or usage example
+- a short README
+- runnable source code
+- sample input or demo commands
+- tests or a deterministic verification command when it makes sense
+- no secrets or private company data
 
 ## Repository Structure
 
