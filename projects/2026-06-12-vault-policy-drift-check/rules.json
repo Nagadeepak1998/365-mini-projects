@@ -1,0 +1,9 @@
+{
+  "forbidden_path_rules": [
+    {
+      "path_glob": "secret/data/shared/*",
+      "forbidden_capabilities": ["create", "update", "patch", "delete"],
+      "note": "shared secret mounts should stay read-only for consumers"
+    }
+  ]
+}

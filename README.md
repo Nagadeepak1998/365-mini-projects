@@ -6,6 +6,7 @@ The goal is not fake GitHub activity. Each project should be explainable in an i
 
 ## Featured Portfolio Projects
 
+- [`2026-06-12-vault-policy-drift-check`](projects/2026-06-12-vault-policy-drift-check) - Vault ACL policy review CLI that flags risky capability drift, wildcard writes, and dangerous access expansion on sensitive paths.
 - [`2026-06-12-llm-runbook-drift-check`](projects/2026-06-12-llm-runbook-drift-check) - AI/DevOps CLI that checks LLM-generated incident runbooks for missing actions, weak grounding, unsupported claims, and risky mitigation advice.
 - [`2026-06-10-cinematic-streaming-hero`](projects/2026-06-10-cinematic-streaming-hero) - React/Tailwind streaming homepage with cinematic video hero, movie/series/review sections, liquid-glass controls, responsive navigation, and visible `Built By Nagadeepak` credit.
 - [`2026-06-10-incident-log-summarizer`](projects/2026-06-10-incident-log-summarizer) - Python CLI that summarizes Kubernetes, CI, and application logs into severity, evidence, probable cause, and runbook-style next actions.
