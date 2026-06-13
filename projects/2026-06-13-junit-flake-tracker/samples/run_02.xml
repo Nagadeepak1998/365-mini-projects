@@ -1,0 +1,9 @@
+<testsuite name="pipeline-run-02" tests="3" failures="2">
+  <testcase classname="tests.api.test_orders" name="test_checkout_retry" time="0.53">
+    <failure message="retry budget exhausted">AssertionError</failure>
+  </testcase>
+  <testcase classname="tests.jobs.test_sync" name="test_backfill_job" time="0.79">
+    <failure message="backfill job returned exit code 1">Traceback omitted</failure>
+  </testcase>
+  <testcase classname="tests.ui.test_dashboard" name="test_homepage_render" time="2.11" />
+</testsuite>

@@ -6,13 +6,13 @@ Most folders are intentionally small. The goal is to practice one useful idea at
 
 ## Recent Builds
 
+- [`2026-06-13-junit-flake-tracker`](projects/2026-06-13-junit-flake-tracker) - JUnit XML review CLI that highlights flaky tests, repeated failures, and slow tests across CI runs.
 - [`2026-06-12-vault-policy-drift-check`](projects/2026-06-12-vault-policy-drift-check) - Vault ACL policy review CLI that flags risky capability drift, wildcard writes, and dangerous access expansion on sensitive paths.
 - [`2026-06-12-llm-runbook-drift-check`](projects/2026-06-12-llm-runbook-drift-check) - Checks AI-generated incident runbooks against required evidence and safe response steps.
 - [`2026-06-10-cinematic-streaming-hero`](projects/2026-06-10-cinematic-streaming-hero) - React/Tailwind streaming UI with a video hero, content sections, glass-style controls, and responsive navigation.
 - [`2026-06-10-incident-log-summarizer`](projects/2026-06-10-incident-log-summarizer) - Python CLI that turns Kubernetes, CI, and application logs into a short incident summary with next steps.
 - [`2026-06-10-compose-risk-check`](projects/2026-06-10-compose-risk-check) - Docker Compose risk checker for common production-readiness issues.
 - [`2026-06-09-rag-context-risk-check`](projects/2026-06-09-rag-context-risk-check) - RAG context risk checker for prompt-injection style context issues.
-- [`2026-06-08-llm-log-redaction-check`](projects/2026-06-08-llm-log-redaction-check) - Log redaction utility for secrets and PII before sending logs to LLM tools.
 - [`2026-06-07-workflow-permission-check`](projects/2026-06-07-workflow-permission-check) - GitHub Actions least-privilege permission checker.
 
 ## How I Use This Repo
