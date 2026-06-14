@@ -1,0 +1,21 @@
+{
+  "service": "checkout-api",
+  "slo_target": 99.9,
+  "windows": [
+    {
+      "name": "5m",
+      "requests": 12000,
+      "errors": 210
+    },
+    {
+      "name": "1h",
+      "requests": 120000,
+      "errors": 1800
+    },
+    {
+      "name": "6h",
+      "requests": 720000,
+      "errors": 1900
+    }
+  ]
+}
