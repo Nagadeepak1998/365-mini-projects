@@ -1,0 +1,30 @@
+{
+  "service": "catalog-api",
+  "service_tier": "tier-1",
+  "deployment": {
+    "environment": "production",
+    "start_time": "2026-06-17T10:00:00-07:00",
+    "duration_minutes": 45,
+    "change_type": "service_release",
+    "database_migration": false,
+    "strategy": "canary",
+    "rollback_plan": "shift traffic back to the previous version and keep the previous image available for 24 hours",
+    "backup_verified": true,
+    "monitoring_links": [
+      "https://example.invalid/dashboards/catalog-api",
+      "https://example.invalid/alerts/catalog-api"
+    ],
+    "approvers": ["release-owner", "sre-oncall"],
+    "recent_incidents_14d": 0,
+    "touches_shared_dependencies": false,
+    "error_budget_remaining_pct": 86,
+    "checkpoint_minutes": 15
+  },
+  "freeze_windows": [
+    {
+      "name": "month-end payment close",
+      "start": "2026-06-15T21:00:00-07:00",
+      "end": "2026-06-16T02:00:00-07:00"
+    }
+  ]
+}
