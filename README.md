@@ -6,6 +6,7 @@ Most folders are intentionally small. The goal is to practice one useful idea at
 
 ## Recent Builds
 
+- [`2026-06-15-alert-noise-budget-check`](projects/2026-06-15-alert-noise-budget-check) - Alert history review CLI that flags noisy page-heavy alerts with low actionability, repeated pages, and poor acknowledgement rates.
 - [`2026-06-14-slo-burn-rate-check`](projects/2026-06-14-slo-burn-rate-check) - SLO snapshot review CLI that calculates error-budget burn rate and flags fast-burn or slow-burn windows.
 - [`2026-06-13-junit-flake-tracker`](projects/2026-06-13-junit-flake-tracker) - JUnit XML review CLI that highlights flaky tests, repeated failures, and slow tests across CI runs.
 - [`2026-06-12-vault-policy-drift-check`](projects/2026-06-12-vault-policy-drift-check) - Vault ACL policy review CLI that flags risky capability drift, wildcard writes, and dangerous access expansion on sensitive paths.

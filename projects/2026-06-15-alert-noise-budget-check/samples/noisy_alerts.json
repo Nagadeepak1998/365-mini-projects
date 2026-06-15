@@ -1,0 +1,30 @@
+{
+  "service": "checkout-api",
+  "window": "7d",
+  "alerts": [
+    {
+      "name": "checkout-latency-high",
+      "severity": "page",
+      "pages": 8,
+      "unique_incidents": 2,
+      "acknowledged_pages": 6,
+      "actionable_pages": 3
+    },
+    {
+      "name": "checkout-pod-restarts",
+      "severity": "page",
+      "pages": 6,
+      "unique_incidents": 2,
+      "acknowledged_pages": 5,
+      "actionable_pages": 2
+    },
+    {
+      "name": "checkout-queue-depth-warning",
+      "severity": "ticket",
+      "pages": 10,
+      "unique_incidents": 3,
+      "acknowledged_pages": 10,
+      "actionable_pages": 9
+    }
+  ]
+}

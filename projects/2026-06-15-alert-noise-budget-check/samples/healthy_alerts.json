@@ -1,0 +1,30 @@
+{
+  "service": "inventory-api",
+  "window": "7d",
+  "alerts": [
+    {
+      "name": "inventory-latency-high",
+      "severity": "page",
+      "pages": 2,
+      "unique_incidents": 2,
+      "acknowledged_pages": 2,
+      "actionable_pages": 2
+    },
+    {
+      "name": "inventory-node-memory",
+      "severity": "page",
+      "pages": 3,
+      "unique_incidents": 2,
+      "acknowledged_pages": 3,
+      "actionable_pages": 2
+    },
+    {
+      "name": "inventory-daily-backup-warning",
+      "severity": "ticket",
+      "pages": 7,
+      "unique_incidents": 6,
+      "acknowledged_pages": 7,
+      "actionable_pages": 6
+    }
+  ]
+}
