@@ -1,0 +1,69 @@
+{
+  "format_version": "1.2",
+  "terraform_version": "1.8.5",
+  "resource_changes": [
+    {
+      "address": "aws_security_group.app",
+      "type": "aws_security_group",
+      "change": {
+        "actions": [
+          "update"
+        ],
+        "after": {
+          "name": "app-prod-sg",
+          "ingress": [
+            {
+              "protocol": "tcp",
+              "from_port": 443,
+              "to_port": 443,
+              "cidr_blocks": [
+                "10.20.0.0/16"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "address": "aws_db_instance.orders",
+      "type": "aws_db_instance",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "after": {
+          "identifier": "orders-prod",
+          "publicly_accessible": false
+        }
+      }
+    },
+    {
+      "address": "aws_s3_bucket_public_access_block.logs",
+      "type": "aws_s3_bucket_public_access_block",
+      "change": {
+        "actions": [
+          "update"
+        ],
+        "after": {
+          "block_public_acls": true,
+          "block_public_policy": true,
+          "ignore_public_acls": true,
+          "restrict_public_buckets": true
+        }
+      }
+    },
+    {
+      "address": "aws_iam_policy.deploy",
+      "type": "aws_iam_policy",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "after": {
+          "name": "deploy-limited",
+          "policy": "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Effect\":\"Allow\",\"Action\":[\"ecs:UpdateService\",\"iam:PassRole\"],\"Resource\":[\"arn:aws:ecs:us-west-2:123456789012:service/prod/orders\",\"arn:aws:iam::123456789012:role/orders-deploy\"]}]}"
+        }
+      }
+    }
+  ]
+}

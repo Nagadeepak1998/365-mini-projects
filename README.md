@@ -6,6 +6,7 @@ Most folders are intentionally small. The goal is to practice one useful idea at
 
 ## Recent Builds
 
+- [`2026-06-16-terraform-plan-risk-check`](projects/2026-06-16-terraform-plan-risk-check) - Terraform plan JSON review CLI that flags public ingress, public database exposure, relaxed S3 bucket protections, and wildcard IAM policy expansion.
 - [`2026-06-15-deployment-window-risk-check`](projects/2026-06-15-deployment-window-risk-check) - Deployment plan review CLI that flags risky release windows, weak rollback plans, missing monitoring links, and production rollout issues.
 - [`2026-06-15-alert-noise-budget-check`](projects/2026-06-15-alert-noise-budget-check) - Alert history review CLI that flags noisy page-heavy alerts with low actionability, repeated pages, and poor acknowledgement rates.
 - [`2026-06-14-slo-burn-rate-check`](projects/2026-06-14-slo-burn-rate-check) - SLO snapshot review CLI that calculates error-budget burn rate and flags fast-burn or slow-burn windows.
