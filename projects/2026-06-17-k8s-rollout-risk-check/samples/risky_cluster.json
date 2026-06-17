@@ -1,0 +1,129 @@
+{
+  "apiVersion": "v1",
+  "kind": "List",
+  "items": [
+    {
+      "apiVersion": "apps/v1",
+      "kind": "Deployment",
+      "metadata": {
+        "namespace": "prod",
+        "name": "payments-api"
+      },
+      "spec": {
+        "replicas": 1,
+        "strategy": {
+          "type": "RollingUpdate",
+          "rollingUpdate": {
+            "maxUnavailable": 1
+          }
+        },
+        "template": {
+          "metadata": {
+            "labels": {
+              "app": "payments-api"
+            }
+          },
+          "spec": {
+            "containers": [
+              {
+                "name": "api",
+                "image": "example.com/payments:v1"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "apiVersion": "apps/v1",
+      "kind": "StatefulSet",
+      "metadata": {
+        "namespace": "prod",
+        "name": "orders-worker"
+      },
+      "spec": {
+        "replicas": 3,
+        "updateStrategy": {
+          "type": "RollingUpdate",
+          "rollingUpdate": {
+            "maxUnavailable": "100%"
+          }
+        },
+        "template": {
+          "metadata": {
+            "labels": {
+              "app": "orders-worker"
+            }
+          },
+          "spec": {
+            "containers": [
+              {
+                "name": "worker",
+                "image": "example.com/orders:v4",
+                "readinessProbe": {
+                  "tcpSocket": {
+                    "port": 8080
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "apiVersion": "policy/v1",
+      "kind": "Deployment",
+      "metadata": {
+        "namespace": "prod",
+        "name": "catalog-api"
+      },
+      "spec": {
+        "replicas": 2,
+        "strategy": {
+          "type": "RollingUpdate",
+          "rollingUpdate": {
+            "maxUnavailable": 1
+          }
+        },
+        "template": {
+          "metadata": {
+            "labels": {
+              "app": "catalog-api"
+            }
+          },
+          "spec": {
+            "containers": [
+              {
+                "name": "api",
+                "image": "example.com/catalog:v2",
+                "readinessProbe": {
+                  "httpGet": {
+                    "path": "/ready",
+                    "port": 8080
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "apiVersion": "policy/v1",
+      "kind": "PodDisruptionBudget",
+      "metadata": {
+        "namespace": "prod",
+        "name": "orders-worker-pdb"
+      },
+      "spec": {
+        "maxUnavailable": 3,
+        "selector": {
+          "matchLabels": {
+            "app": "orders-worker"
+          }
+        }
+      }
+    }
+  ]
+}
