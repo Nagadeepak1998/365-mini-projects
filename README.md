@@ -6,6 +6,7 @@ Most folders are intentionally small. The goal is to practice one useful idea at
 
 ## Recent Builds
 
+- [`2026-06-18-prometheus-rule-sanity-check`](projects/2026-06-18-prometheus-rule-sanity-check) - PrometheusRule snapshot review CLI that flags missing severity labels, page alerts without `for`, and missing runbook, dashboard, summary, or ownership metadata.
 - [`2026-06-17-k8s-rollout-risk-check`](projects/2026-06-17-k8s-rollout-risk-check) - Kubernetes rollout review CLI that flags single-replica workloads, missing readiness probes, risky rolling updates, and weak PodDisruptionBudget coverage.
 - [`2026-06-16-terraform-plan-risk-check`](projects/2026-06-16-terraform-plan-risk-check) - Terraform plan JSON review CLI that flags public ingress, public database exposure, relaxed S3 bucket protections, and wildcard IAM policy expansion.
 - [`2026-06-15-deployment-window-risk-check`](projects/2026-06-15-deployment-window-risk-check) - Deployment plan review CLI that flags risky release windows, weak rollback plans, missing monitoring links, and production rollout issues.

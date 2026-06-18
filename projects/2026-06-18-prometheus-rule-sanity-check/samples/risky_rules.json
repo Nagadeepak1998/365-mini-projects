@@ -1,0 +1,77 @@
+{
+  "apiVersion": "v1",
+  "items": [
+    {
+      "apiVersion": "monitoring.coreos.com/v1",
+      "kind": "PrometheusRule",
+      "metadata": {
+        "name": "payments-alerts",
+        "namespace": "prod-payments"
+      },
+      "spec": {
+        "groups": [
+          {
+            "name": "payments-page.rules",
+            "rules": [
+              {
+                "alert": "PaymentsApiErrorRateHigh",
+                "expr": "sum(rate(http_requests_total{job=\"payments-api\",status=~\"5..\"}[5m])) > 10",
+                "labels": {
+                  "severity": "critical"
+                },
+                "annotations": {
+                  "summary": "Payments API is serving a high volume of 5xx responses."
+                }
+              },
+              {
+                "alert": "PaymentsQueueLagHigh",
+                "expr": "max(payments_queue_lag_seconds) > 120",
+                "for": "10m",
+                "labels": {
+                  "team": "payments"
+                },
+                "annotations": {
+                  "runbook_url": "https://example.com/runbooks/payments-queue"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "apiVersion": "monitoring.coreos.com/v1",
+      "kind": "PrometheusRule",
+      "metadata": {
+        "name": "platform-alerts",
+        "namespace": "prod-platform"
+      },
+      "spec": {
+        "groups": [
+          {
+            "name": "platform-warning.rules",
+            "rules": [
+              {
+                "alert": "NodeDiskPressureForecast",
+                "expr": "predict_linear(node_filesystem_avail_bytes[6h], 3600) < 0",
+                "for": "15m",
+                "labels": {
+                  "severity": "warning",
+                  "service": "node-monitoring"
+                },
+                "annotations": {
+                  "dashboard_url": "https://grafana.example.com/d/node-capacity",
+                  "runbook_url": "https://example.com/runbooks/node-disk-pressure"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "kind": "List",
+  "metadata": {
+    "resourceVersion": ""
+  }
+}

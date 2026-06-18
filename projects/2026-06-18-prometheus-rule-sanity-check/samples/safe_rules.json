@@ -1,0 +1,44 @@
+{
+  "apiVersion": "v1",
+  "items": [
+    {
+      "apiVersion": "monitoring.coreos.com/v1",
+      "kind": "PrometheusRule",
+      "metadata": {
+        "name": "checkout-alerts",
+        "namespace": "prod-checkout"
+      },
+      "spec": {
+        "groups": [
+          {
+            "name": "checkout-page.rules",
+            "rules": [
+              {
+                "alert": "CheckoutApiErrorRateHigh",
+                "expr": "sum(rate(http_requests_total{job=\"checkout-api\",status=~\"5..\"}[5m])) > 5",
+                "for": "10m",
+                "labels": {
+                  "severity": "critical",
+                  "team": "checkout"
+                },
+                "annotations": {
+                  "summary": "Checkout API error rate is above the expected production threshold.",
+                  "dashboard_url": "https://grafana.example.com/d/checkout-api",
+                  "runbook_url": "https://example.com/runbooks/checkout-api-errors"
+                }
+              },
+              {
+                "record": "job:http_requests_total:rate5m",
+                "expr": "sum by(job) (rate(http_requests_total[5m]))"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "kind": "List",
+  "metadata": {
+    "resourceVersion": ""
+  }
+}
