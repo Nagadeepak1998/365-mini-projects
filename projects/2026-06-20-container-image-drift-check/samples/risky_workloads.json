@@ -1,0 +1,70 @@
+{
+  "items": [
+    {
+      "kind": "Deployment",
+      "metadata": {
+        "namespace": "prod",
+        "name": "payments-api"
+      },
+      "spec": {
+        "template": {
+          "spec": {
+            "containers": [
+              {
+                "name": "api",
+                "image": "registry.example.com/payments/api:latest",
+                "imagePullPolicy": "IfNotPresent"
+              },
+              {
+                "name": "worker",
+                "image": "registry.example.com/payments/worker"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "kind": "Deployment",
+      "metadata": {
+        "namespace": "staging",
+        "name": "payments-api"
+      },
+      "spec": {
+        "template": {
+          "spec": {
+            "containers": [
+              {
+                "name": "api",
+                "image": "registry.example.com/payments/api:1.4.2"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "kind": "CronJob",
+      "metadata": {
+        "namespace": "ops",
+        "name": "nightly-reconcile"
+      },
+      "spec": {
+        "jobTemplate": {
+          "spec": {
+            "template": {
+              "spec": {
+                "containers": [
+                  {
+                    "name": "reconcile",
+                    "image": "registry.example.com/ops/reconcile:nightly"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

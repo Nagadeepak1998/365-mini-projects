@@ -1,0 +1,51 @@
+{
+  "items": [
+    {
+      "kind": "Deployment",
+      "metadata": {
+        "namespace": "prod",
+        "name": "payments-api"
+      },
+      "spec": {
+        "template": {
+          "spec": {
+            "containers": [
+              {
+                "name": "api",
+                "image": "registry.example.com/payments/api@sha256:1111222233334444555566667777888899990000aaaabbbbccccddddeeeeffff",
+                "imagePullPolicy": "IfNotPresent"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "kind": "StatefulSet",
+      "metadata": {
+        "namespace": "prod",
+        "name": "ledger"
+      },
+      "spec": {
+        "template": {
+          "spec": {
+            "initContainers": [
+              {
+                "name": "migrate",
+                "image": "registry.example.com/ledger/migrate@sha256:222233334444555566667777888899990000aaaabbbbccccddddeeeeffff1111",
+                "imagePullPolicy": "IfNotPresent"
+              }
+            ],
+            "containers": [
+              {
+                "name": "api",
+                "image": "registry.example.com/ledger/api@sha256:33334444555566667777888899990000aaaabbbbccccddddeeeeffff11112222",
+                "imagePullPolicy": "IfNotPresent"
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}
