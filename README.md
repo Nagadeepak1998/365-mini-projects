@@ -6,6 +6,7 @@ Most folders are intentionally small. The goal is to practice one useful idea at
 
 ## Recent Builds
 
+- [`2026-06-21-openapi-contract-diff-check`](projects/2026-06-21-openapi-contract-diff-check) - OpenAPI contract comparison CLI that flags removed endpoints, stricter parameters, removed fields, and missing success responses before an API release.
 - [`2026-06-20-container-image-drift-check`](projects/2026-06-20-container-image-drift-check) - Kubernetes workload image review CLI that flags mutable tags, missing digests, sticky pull-policy risks, and cross-namespace image version drift.
 - [`2026-06-19-postgres-migration-risk-check`](projects/2026-06-19-postgres-migration-risk-check) - PostgreSQL migration review CLI that flags destructive DDL, explicit locks, blocking index builds, and risky `NOT NULL` changes.
 - [`2026-06-18-prometheus-rule-sanity-check`](projects/2026-06-18-prometheus-rule-sanity-check) - PrometheusRule snapshot review CLI that flags missing severity labels, page alerts without `for`, and missing runbook, dashboard, summary, or ownership metadata.
