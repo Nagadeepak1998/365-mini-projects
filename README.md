@@ -6,6 +6,7 @@ Most folders are intentionally small. The goal is to practice one useful idea at
 
 ## Recent Builds
 
+- [`2026-06-23-feature-flag-risk-check`](projects/2026-06-23-feature-flag-risk-check) - Feature flag rollout review CLI that flags large rollout jumps, missing owners, stale cleanup dates, prod debug flags, missing rollback notes, and missing kill switches.
 - [`2026-06-22-k8s-hpa-risk-check`](projects/2026-06-22-k8s-hpa-risk-check) - Kubernetes HPA review CLI that flags low minimum replicas, missing scale targets, no scale-out room, CPU metric/request mismatches, and weak scale-down stabilization.
 - [`2026-06-21-openapi-contract-diff-check`](projects/2026-06-21-openapi-contract-diff-check) - OpenAPI contract comparison CLI that flags removed endpoints, stricter parameters, removed fields, and missing success responses before an API release.
 - [`2026-06-20-container-image-drift-check`](projects/2026-06-20-container-image-drift-check) - Kubernetes workload image review CLI that flags mutable tags, missing digests, sticky pull-policy risks, and cross-namespace image version drift.

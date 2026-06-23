@@ -1,0 +1,22 @@
+{
+  "flags": [
+    {
+      "name": "checkout_redesign",
+      "environment": "prod",
+      "rollout_percent": 35,
+      "owner": "payments-platform",
+      "expires_on": "2026-08-01",
+      "kill_switch": true,
+      "rollback": "Disable checkout_redesign in the flag console."
+    },
+    {
+      "name": "smart_retry",
+      "environment": "prod",
+      "rollout_percent": 100,
+      "owner": "",
+      "expires_on": "2026-01-15",
+      "debug": true,
+      "kill_switch": false
+    }
+  ]
+}
