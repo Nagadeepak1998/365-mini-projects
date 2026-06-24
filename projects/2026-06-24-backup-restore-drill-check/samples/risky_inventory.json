@@ -1,0 +1,17 @@
+{
+  "services": [
+    {
+      "name": "orders-db",
+      "tier": "critical",
+      "owner": "",
+      "backup_status": "failed",
+      "latest_backup_at": "2026-06-20",
+      "latest_restore_test_at": "2026-01-10",
+      "restore_test_interval_days": 60,
+      "rpo_hours": 24,
+      "retention_days": 7,
+      "encrypted": false,
+      "cross_region": false
+    }
+  ]
+}
