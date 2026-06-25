@@ -1,0 +1,17 @@
+{
+  "secrets": [
+    {
+      "name": "orders-api-token",
+      "owner": "",
+      "last_rotated_at": "2026-01-15",
+      "next_rotation_due": "2026-05-30",
+      "rotation_interval_days": 60,
+      "used_by_critical_path": true,
+      "dual_secret_supported": false,
+      "rollback_plan": "",
+      "validation_status": "failed",
+      "last_validation_at": "2026-04-01",
+      "break_glass_access_reviewed_at": "2026-01-01"
+    }
+  ]
+}

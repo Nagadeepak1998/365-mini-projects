@@ -6,6 +6,7 @@ Most folders are intentionally small. The goal is to practice one useful idea at
 
 ## Recent Builds
 
+- [`2026-06-25-secret-rotation-readiness-check`](projects/2026-06-25-secret-rotation-readiness-check) - Secret rotation review CLI that flags stale credentials, overdue rotations, missing owners, weak validation evidence, missing rollback plans, and critical-path secrets without dual-secret overlap.
 - [`2026-06-24-backup-restore-drill-check`](projects/2026-06-24-backup-restore-drill-check) - Backup restore drill review CLI that flags stale backups, failed backup jobs, old restore tests, short retention, missing owners, missing encryption, and weak critical-service coverage.
 - [`2026-06-23-feature-flag-risk-check`](projects/2026-06-23-feature-flag-risk-check) - Feature flag rollout review CLI that flags large rollout jumps, missing owners, stale cleanup dates, prod debug flags, missing rollback notes, and missing kill switches.
 - [`2026-06-22-k8s-hpa-risk-check`](projects/2026-06-22-k8s-hpa-risk-check) - Kubernetes HPA review CLI that flags low minimum replicas, missing scale targets, no scale-out room, CPU metric/request mismatches, and weak scale-down stabilization.

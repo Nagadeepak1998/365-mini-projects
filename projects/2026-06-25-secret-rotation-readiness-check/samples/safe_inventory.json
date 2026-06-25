@@ -1,0 +1,29 @@
+{
+  "secrets": [
+    {
+      "name": "payments-api-db-password",
+      "owner": "payments-platform",
+      "last_rotated_at": "2026-06-10",
+      "next_rotation_due": "2026-07-10",
+      "rotation_interval_days": 45,
+      "used_by_critical_path": true,
+      "dual_secret_supported": true,
+      "rollback_plan": "Keep the previous password active until health checks pass.",
+      "validation_status": "passed",
+      "last_validation_at": "2026-06-24",
+      "break_glass_access_reviewed_at": "2026-06-01"
+    },
+    {
+      "name": "reporting-worker-api-key",
+      "owner": "data-platform",
+      "last_rotated_at": "2026-06-01",
+      "next_rotation_due": "2026-08-01",
+      "rotation_interval_days": 90,
+      "used_by_critical_path": false,
+      "dual_secret_supported": true,
+      "rollback_plan": "Revert the worker deployment to the previous secret reference.",
+      "validation_status": "passed",
+      "last_validation_at": "2026-06-20"
+    }
+  ]
+}
