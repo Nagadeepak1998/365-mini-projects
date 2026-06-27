@@ -6,6 +6,7 @@ Most folders are intentionally small. The goal is to practice one useful idea at
 
 ## Recent Builds
 
+- [`2026-06-27-sqs-dlq-alarm-check`](projects/2026-06-27-sqs-dlq-alarm-check) - SQS queue inventory review CLI that flags missing DLQ redrive policies, missing visible-message alarms, weak alarm thresholds, missing owners, and DLQs that already hold messages.
 - [`2026-06-26-incident-handoff-check`](projects/2026-06-26-incident-handoff-check) - Incident handoff review CLI that flags missing timeline context, impact summaries, owners, next actions, mitigation notes, evidence links, customer comms state, and rollback or follow-up plans.
 - [`2026-06-25-secret-rotation-readiness-check`](projects/2026-06-25-secret-rotation-readiness-check) - Secret rotation review CLI that flags stale credentials, overdue rotations, missing owners, weak validation evidence, missing rollback plans, and critical-path secrets without dual-secret overlap.
 - [`2026-06-24-backup-restore-drill-check`](projects/2026-06-24-backup-restore-drill-check) - Backup restore drill review CLI that flags stale backups, failed backup jobs, old restore tests, short retention, missing owners, missing encryption, and weak critical-service coverage.

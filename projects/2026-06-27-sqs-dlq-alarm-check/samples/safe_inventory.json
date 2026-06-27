@@ -1,0 +1,36 @@
+{
+  "queues": [
+    {
+      "name": "payments-events",
+      "environment": "prod",
+      "owner": "payments-platform",
+      "critical": true,
+      "redrive_policy": {
+        "dead_letter_queue": "payments-events-dlq",
+        "max_receive_count": 5
+      }
+    },
+    {
+      "name": "payments-events-dlq",
+      "environment": "prod",
+      "owner": "payments-platform",
+      "is_dead_letter_queue": true,
+      "approximate_messages_visible": 0,
+      "oldest_message_age_seconds": 0,
+      "alarms": [
+        {
+          "metric_name": "ApproximateNumberOfMessagesVisible",
+          "threshold": 1,
+          "period_minutes": 5,
+          "runbook": "https://runbooks.example/sqs/payments-events-dlq"
+        }
+      ]
+    },
+    {
+      "name": "email-notifications",
+      "environment": "staging",
+      "owner": "communications",
+      "critical": false
+    }
+  ]
+}

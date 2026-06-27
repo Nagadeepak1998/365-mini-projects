@@ -1,0 +1,42 @@
+{
+  "queues": [
+    {
+      "name": "billing-events",
+      "environment": "prod",
+      "owner": "",
+      "critical": true,
+      "redrive_policy": {
+        "dead_letter_queue": "billing-events-missing-dlq",
+        "max_receive_count": 1
+      }
+    },
+    {
+      "name": "support-notifications",
+      "environment": "prod",
+      "critical": false
+    },
+    {
+      "name": "orders-dlq",
+      "environment": "production",
+      "is_dead_letter_queue": true,
+      "owner": "",
+      "approximate_messages_visible": 7,
+      "oldest_message_age_seconds": 7200,
+      "alarms": [
+        {
+          "metric_name": "ApproximateNumberOfMessagesVisible",
+          "threshold": 25,
+          "period_minutes": 15
+        }
+      ]
+    },
+    {
+      "name": "audit-dlq",
+      "environment": "prod",
+      "is_dead_letter_queue": true,
+      "owner": "platform",
+      "approximate_messages_visible": 0,
+      "oldest_message_age_seconds": 0
+    }
+  ]
+}
