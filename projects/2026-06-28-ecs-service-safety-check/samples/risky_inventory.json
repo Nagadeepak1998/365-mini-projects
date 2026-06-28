@@ -1,0 +1,61 @@
+{
+  "services": [
+    {
+      "name": "checkout-api",
+      "environment": "prod",
+      "owner": "",
+      "critical": true,
+      "desired_count": 1,
+      "public_endpoint": true,
+      "deployment": {
+        "circuit_breaker_enabled": false,
+        "rollback_enabled": false,
+        "minimum_healthy_percent": 50,
+        "maximum_percent": 100
+      },
+      "load_balancer": {
+        "enabled": false
+      },
+      "health_check_grace_period_seconds": 0,
+      "alarms": [
+        {
+          "metric_name": "CPUUtilization",
+          "threshold": 90
+        }
+      ],
+      "task_definition": {
+        "image": "123456789012.dkr.ecr.us-west-2.amazonaws.com/checkout-api:latest",
+        "log_retention_days": 7
+      }
+    },
+    {
+      "name": "worker",
+      "environment": "production",
+      "owner": "orders-platform",
+      "critical": false,
+      "desired_count": 2,
+      "public_endpoint": false,
+      "deployment": {
+        "circuit_breaker_enabled": true,
+        "rollback_enabled": true,
+        "minimum_healthy_percent": 100,
+        "maximum_percent": 250
+      },
+      "load_balancer": {
+        "enabled": true
+      },
+      "health_check_grace_period_seconds": 45,
+      "alarms": [
+        {
+          "metric_name": "MemoryUtilization",
+          "threshold": 85,
+          "runbook": "https://runbooks.example/ecs/worker"
+        }
+      ],
+      "task_definition": {
+        "image": "123456789012.dkr.ecr.us-west-2.amazonaws.com/worker:stable",
+        "log_retention_days": 3
+      }
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "services": [
+    {
+      "name": "payments-api",
+      "environment": "prod",
+      "owner": "payments-platform",
+      "critical": true,
+      "desired_count": 3,
+      "public_endpoint": true,
+      "deployment": {
+        "circuit_breaker_enabled": true,
+        "rollback_enabled": true,
+        "minimum_healthy_percent": 100,
+        "maximum_percent": 200
+      },
+      "load_balancer": {
+        "enabled": true,
+        "health_check_path": "/health"
+      },
+      "health_check_grace_period_seconds": 60,
+      "alarms": [
+        {
+          "metric_name": "CPUUtilization",
+          "threshold": 80,
+          "runbook": "https://runbooks.example/ecs/payments-api"
+        },
+        {
+          "metric_name": "MemoryUtilization",
+          "threshold": 85,
+          "runbook": "https://runbooks.example/ecs/payments-api"
+        }
+      ],
+      "task_definition": {
+        "image": "123456789012.dkr.ecr.us-west-2.amazonaws.com/payments-api:2026-06-28",
+        "image_digest": "sha256:0123456789abcdef",
+        "log_retention_days": 30
+      }
+    }
+  ]
+}
