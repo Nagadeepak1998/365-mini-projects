@@ -1,0 +1,68 @@
+{
+  "routes": [
+    {
+      "route_key": "POST /checkout",
+      "environment": "prod",
+      "owner": "",
+      "public": true,
+      "critical": true,
+      "auth_type": "none",
+      "throttling": {
+        "enabled": false
+      },
+      "access_logs": {
+        "enabled": false
+      },
+      "integration": {
+        "type": "lambda",
+        "timeout_seconds": 30,
+        "lambda_alias": "",
+        "request_validation": false
+      },
+      "alarms": [
+        {
+          "metric_name": "5XXError",
+          "threshold": 10
+        }
+      ],
+      "rollback_note": "",
+      "canary": {
+        "enabled": false
+      }
+    },
+    {
+      "route_key": "GET /orders",
+      "environment": "production",
+      "owner": "orders-platform",
+      "public": false,
+      "critical": false,
+      "auth_type": "aws_iam",
+      "throttling": {
+        "enabled": true,
+        "rate_limit_per_second": 0,
+        "burst_limit": 0
+      },
+      "access_logs": {
+        "enabled": true,
+        "retention_days": ""
+      },
+      "integration": {
+        "type": "lambda",
+        "timeout_seconds": 0,
+        "lambda_alias": "live",
+        "request_validation": true
+      },
+      "alarms": [
+        {
+          "metric_name": "Latency",
+          "threshold": 1500,
+          "runbook": "https://runbooks.example/api/orders"
+        }
+      ],
+      "rollback_note": "Disable the route mapping during rollback.",
+      "canary": {
+        "enabled": false
+      }
+    }
+  ]
+}

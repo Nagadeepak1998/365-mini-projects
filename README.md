@@ -6,6 +6,7 @@ Most folders are intentionally small. The goal is to practice one useful idea at
 
 ## Recent Builds
 
+- [`2026-06-29-api-gateway-route-readiness-check`](projects/2026-06-29-api-gateway-route-readiness-check) - API Gateway route inventory review CLI that flags missing owners, weak public-route auth, missing throttling, missing access logs, Lambda timeout or alias issues, missing validation, missing alarms, weak runbook coverage, missing rollback notes, and missing canary plans.
 - [`2026-06-28-ecs-service-safety-check`](projects/2026-06-28-ecs-service-safety-check) - ECS service inventory review CLI that flags missing owners, low task counts, disabled deployment rollback, risky deployment percentages, weak health checks, missing alarms, mutable task images, and short log retention.
 - [`2026-06-27-sqs-dlq-alarm-check`](projects/2026-06-27-sqs-dlq-alarm-check) - SQS queue inventory review CLI that flags missing DLQ redrive policies, missing visible-message alarms, weak alarm thresholds, missing owners, and DLQs that already hold messages.
 - [`2026-06-26-incident-handoff-check`](projects/2026-06-26-incident-handoff-check) - Incident handoff review CLI that flags missing timeline context, impact summaries, owners, next actions, mitigation notes, evidence links, customer comms state, and rollback or follow-up plans.
