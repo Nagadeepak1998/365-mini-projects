@@ -1,0 +1,46 @@
+{
+  "databases": [
+    {
+      "identifier": "orders-prod",
+      "environment": "prod",
+      "owner": "orders-platform",
+      "critical": true,
+      "multi_az": true,
+      "deletion_protection": true,
+      "read_replica": true,
+      "backups": {
+        "enabled": true,
+        "retention_days": 14,
+        "window": "07:00-08:00 UTC"
+      },
+      "storage": {
+        "autoscaling": true
+      },
+      "alarms": [
+        {
+          "metric_name": "CPUUtilization",
+          "runbook": "https://runbooks.example/db/orders"
+        },
+        {
+          "metric_name": "FreeStorageSpace",
+          "runbook": "https://runbooks.example/db/orders"
+        },
+        {
+          "metric_name": "DatabaseConnections",
+          "runbook": "https://runbooks.example/db/orders"
+        },
+        {
+          "metric_name": "ReplicaLag",
+          "runbook": "https://runbooks.example/db/orders"
+        }
+      ],
+      "failover_drill": {
+        "last_tested_at": "2026-05-15",
+        "runbook": "https://runbooks.example/db/orders/failover"
+      },
+      "rto_minutes": 30,
+      "rpo_minutes": 5,
+      "pending_reboot": false
+    }
+  ]
+}

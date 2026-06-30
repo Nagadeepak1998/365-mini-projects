@@ -1,0 +1,57 @@
+{
+  "databases": [
+    {
+      "identifier": "checkout-prod",
+      "environment": "production",
+      "owner": "",
+      "critical": true,
+      "multi_az": false,
+      "deletion_protection": false,
+      "read_replica": true,
+      "backups": {
+        "enabled": true,
+        "retention_days": 3,
+        "window": ""
+      },
+      "storage": {
+        "autoscaling": false
+      },
+      "alarms": [
+        {
+          "metric_name": "CPUUtilization",
+          "runbook": ""
+        }
+      ],
+      "failover_drill": {
+        "last_tested_at": "2025-11-01",
+        "runbook": ""
+      },
+      "pending_reboot": true
+    },
+    {
+      "identifier": "analytics-prod",
+      "environment": "prod",
+      "owner": "data-platform",
+      "critical": true,
+      "multi_az": true,
+      "deletion_protection": true,
+      "read_replica": false,
+      "backups": {
+        "enabled": false
+      },
+      "storage": {
+        "autoscaling": true
+      },
+      "alarms": [
+        {
+          "metric_name": "FreeStorageSpace",
+          "runbook": "https://runbooks.example/db/analytics"
+        }
+      ],
+      "failover_drill": {},
+      "rto_minutes": 60,
+      "rpo_minutes": 15,
+      "pending_reboot": false
+    }
+  ]
+}
