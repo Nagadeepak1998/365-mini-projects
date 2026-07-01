@@ -6,6 +6,7 @@ Most folders are intentionally small. The goal is to practice one useful idea at
 
 ## Recent Builds
 
+- [`2026-07-01-k8s-namespace-quota-check`](projects/2026-07-01-k8s-namespace-quota-check) - Kubernetes namespace inventory review CLI that flags missing owners, missing ResourceQuota or LimitRange coverage, incomplete quota hard limits, missing default requests, weak network isolation, and containers without CPU or memory requests and limits.
 - [`2026-06-30-rds-failover-readiness-check`](projects/2026-06-30-rds-failover-readiness-check) - RDS inventory review CLI that flags missing owners, weak Multi-AZ coverage, disabled backups, short retention, missing alarms, stale failover drills, missing RTO/RPO targets, and pending-reboot changes.
 - [`2026-06-29-api-gateway-route-readiness-check`](projects/2026-06-29-api-gateway-route-readiness-check) - API Gateway route inventory review CLI that flags missing owners, weak public-route auth, missing throttling, missing access logs, Lambda timeout or alias issues, missing validation, missing alarms, weak runbook coverage, missing rollback notes, and missing canary plans.
 - [`2026-06-28-ecs-service-safety-check`](projects/2026-06-28-ecs-service-safety-check) - ECS service inventory review CLI that flags missing owners, low task counts, disabled deployment rollback, risky deployment percentages, weak health checks, missing alarms, mutable task images, and short log retention.

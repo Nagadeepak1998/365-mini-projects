@@ -1,0 +1,65 @@
+{
+  "namespaces": [
+    {
+      "name": "checkout-prod",
+      "environment": "production",
+      "owner": "",
+      "resource_quota": {
+        "hard": {
+          "cpu": "12"
+        }
+      },
+      "default_deny_network_policy": false,
+      "workloads": [
+        {
+          "name": "checkout-api",
+          "containers": [
+            {
+              "name": "app",
+              "requests": {
+                "cpu": "250m"
+              },
+              "limits": {}
+            },
+            {
+              "name": "sidecar",
+              "requests": {},
+              "limits": {
+                "memory": "256Mi"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "billing-prod",
+      "environment": "prod",
+      "owner": "billing-platform",
+      "limit_range": {
+        "default_requests": {
+          "cpu": "100m"
+        }
+      },
+      "default_deny_network_policy": true,
+      "workloads": [
+        {
+          "name": "billing-worker",
+          "containers": [
+            {
+              "name": "worker",
+              "requests": {
+                "cpu": "500m",
+                "memory": "1Gi"
+              },
+              "limits": {
+                "cpu": "1",
+                "memory": "2Gi"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

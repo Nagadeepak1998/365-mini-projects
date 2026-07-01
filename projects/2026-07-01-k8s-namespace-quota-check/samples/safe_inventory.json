@@ -1,0 +1,41 @@
+{
+  "namespaces": [
+    {
+      "name": "orders-prod",
+      "environment": "prod",
+      "owner": "orders-platform",
+      "resource_quota": {
+        "hard": {
+          "cpu": "20",
+          "memory": "64Gi",
+          "pods": "80"
+        }
+      },
+      "limit_range": {
+        "default_requests": {
+          "cpu": "100m",
+          "memory": "128Mi"
+        }
+      },
+      "default_deny_network_policy": true,
+      "workloads": [
+        {
+          "name": "orders-api",
+          "containers": [
+            {
+              "name": "app",
+              "requests": {
+                "cpu": "250m",
+                "memory": "512Mi"
+              },
+              "limits": {
+                "cpu": "1",
+                "memory": "1Gi"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
