@@ -1,0 +1,74 @@
+{
+  "distributions": [
+    {
+      "id": "checkout-edge",
+      "environment": "production",
+      "owner": "",
+      "critical": true,
+      "web_acl_id": "",
+      "minimum_protocol_version": "TLSv1",
+      "access_logging": {
+        "enabled": false,
+        "retention_days": 0
+      },
+      "origin_failover": {
+        "enabled": false
+      },
+      "default_behavior": {
+        "viewer_protocol_policy": "allow-all",
+        "response_headers_policy": ""
+      },
+      "cache_behaviors": [
+        {
+          "path_pattern": "/api/*",
+          "viewer_protocol_policy": "allow-all"
+        }
+      ],
+      "alarms": [
+        {
+          "name": "waf_block_spike",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "media-edge",
+      "environment": "prod",
+      "owner": "media-platform",
+      "critical": false,
+      "web_acl_id": "arn:aws:wafv2:us-east-1:123456789012:global/webacl/media",
+      "minimum_protocol_version": "TLSv1.2_2021",
+      "access_logging": {
+        "enabled": true,
+        "retention_days": 7
+      },
+      "default_behavior": {
+        "viewer_protocol_policy": "redirect-to-https",
+        "response_headers_policy": "security-headers"
+      },
+      "cache_behaviors": [
+        {
+          "path_pattern": "/video/*",
+          "viewer_protocol_policy": "https-only"
+        }
+      ],
+      "alarms": [
+        {
+          "name": "5xx_error_rate",
+          "enabled": true
+        },
+        {
+          "name": "origin_latency",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "sandbox-edge",
+      "environment": "dev",
+      "default_behavior": {
+        "viewer_protocol_policy": "allow-all"
+      }
+    }
+  ]
+}
