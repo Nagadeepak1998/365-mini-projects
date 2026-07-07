@@ -1,0 +1,39 @@
+{
+  "changes": [
+    {
+      "name": "api.example.com",
+      "type": "A",
+      "action": "update",
+      "environment": "prod",
+      "zone_scope": "public",
+      "owner": "platform-dns",
+      "ticket": "CHG-2407",
+      "ttl_seconds": 60,
+      "existing_ttl_seconds": 300,
+      "rollback": "Restore the previous alias target from the change ticket.",
+      "validation_checks": [
+        {
+          "name": "dns_resolution",
+          "enabled": true
+        },
+        {
+          "name": "http_health",
+          "enabled": true
+        },
+        {
+          "name": "rollback_verified",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "name": "internal-api.example.local",
+      "type": "CNAME",
+      "action": "update",
+      "environment": "prod",
+      "zone_scope": "private",
+      "owner": "platform-dns",
+      "ttl_seconds": 300
+    }
+  ]
+}

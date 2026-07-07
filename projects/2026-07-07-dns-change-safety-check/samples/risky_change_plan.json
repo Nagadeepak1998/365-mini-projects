@@ -1,0 +1,82 @@
+{
+  "changes": [
+    {
+      "name": "example.com",
+      "type": "CNAME",
+      "action": "update",
+      "environment": "production",
+      "zone_scope": "public",
+      "owner": "",
+      "ticket": "",
+      "ttl_seconds": 3600,
+      "existing_ttl_seconds": 7200,
+      "rollback": "",
+      "validation_checks": [
+        {
+          "name": "dns_resolution",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "name": "*.example.com",
+      "type": "A",
+      "action": "delete",
+      "environment": "prod",
+      "zone_scope": "internet",
+      "owner": "edge-platform",
+      "ticket": "CHG-2408",
+      "ttl_seconds": 60,
+      "existing_ttl_seconds": 300,
+      "rollback": "Recreate the wildcard record from the saved zone export.",
+      "validation_checks": [
+        {
+          "name": "dns_resolution",
+          "enabled": true
+        },
+        {
+          "name": "http_health",
+          "enabled": true
+        },
+        {
+          "name": "rollback_verified",
+          "enabled": false
+        }
+      ]
+    },
+    {
+      "name": "mail.example.com",
+      "type": "MX",
+      "action": "create",
+      "environment": "prod",
+      "zone_scope": "public",
+      "owner": "messaging",
+      "ticket": "CHG-2409",
+      "priority": 0,
+      "ttl_seconds": 600,
+      "existing_ttl_seconds": 0,
+      "rollback": "Remove the new MX record.",
+      "validation_checks": [
+        {
+          "name": "dns_resolution",
+          "enabled": true
+        },
+        {
+          "name": "http_health",
+          "enabled": true
+        },
+        {
+          "name": "rollback_verified",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "name": "dev.example.com",
+      "type": "A",
+      "action": "delete",
+      "environment": "dev",
+      "zone_scope": "public"
+    }
+  ]
+}
