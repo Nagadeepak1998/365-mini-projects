@@ -1,0 +1,42 @@
+{
+  "certificates": [
+    {
+      "common_name": "checkout.example.com",
+      "environment": "production",
+      "exposure": "internet",
+      "owner": "",
+      "issuer": "Legacy CA",
+      "expires_at": "2026-07-18",
+      "auto_renew": false,
+      "hostname_match_validated": false,
+      "certificate_chain_validated": false,
+      "renewal_runbook": "",
+      "monitoring_alarm": "",
+      "key_size_bits": 1024,
+      "signature_algorithm": "sha1WithRSAEncryption",
+      "last_rotation_drill_at": "2024-05-01"
+    },
+    {
+      "common_name": "www.example.com",
+      "environment": "prod",
+      "exposure": "public",
+      "owner": "web-platform",
+      "issuer": "Example Managed CA",
+      "expires_at": "2026-08-20",
+      "auto_renew": true,
+      "hostname_match_validated": true,
+      "certificate_chain_validated": true,
+      "renewal_runbook": "docs/runbooks/tls-renewal.md",
+      "monitoring_alarm": "tls-expiry-www-example-com",
+      "key_size_bits": 2048,
+      "signature_algorithm": "sha256WithRSAEncryption",
+      "last_rotation_drill_at": ""
+    },
+    {
+      "common_name": "internal-api.example.local",
+      "environment": "prod",
+      "exposure": "private",
+      "expires_at": "2026-07-12"
+    }
+  ]
+}

@@ -6,6 +6,7 @@ Most folders are intentionally small. The goal is to practice one useful idea at
 
 ## Recent Builds
 
+- [`2026-07-08-tls-certificate-readiness-check`](projects/2026-07-08-tls-certificate-readiness-check) - TLS certificate inventory review CLI that flags missing owners, expired or soon-to-expire public production certificates, missing auto-renewal, missing hostname or chain validation, missing runbooks and alarms, weak key sizes, SHA-1 signatures, and stale rotation drills.
 - [`2026-07-07-dns-change-safety-check`](projects/2026-07-07-dns-change-safety-check) - DNS change plan review CLI that flags risky public production cutovers, including missing owners, destructive deletes, high TTL values, apex CNAMEs, wildcard changes, missing rollback plans, and missing validation checks.
 - [`2026-07-06-cloudfront-edge-safety-check`](projects/2026-07-06-cloudfront-edge-safety-check) - CloudFront distribution inventory review CLI that flags missing owners, missing WAF coverage, older TLS policies, weak HTTPS enforcement, missing security headers, disabled or short-retention access logs, missing failover, and missing edge alarms.
 - [`2026-07-01-k8s-namespace-quota-check`](projects/2026-07-01-k8s-namespace-quota-check) - Kubernetes namespace inventory review CLI that flags missing owners, missing ResourceQuota or LimitRange coverage, incomplete quota hard limits, missing default requests, weak network isolation, and containers without CPU or memory requests and limits.

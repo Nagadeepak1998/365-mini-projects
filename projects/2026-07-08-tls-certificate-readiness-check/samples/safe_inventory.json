@@ -1,0 +1,26 @@
+{
+  "certificates": [
+    {
+      "common_name": "api.example.com",
+      "environment": "prod",
+      "exposure": "public",
+      "owner": "platform-edge",
+      "issuer": "Example Managed CA",
+      "expires_at": "2026-10-30",
+      "auto_renew": true,
+      "hostname_match_validated": true,
+      "certificate_chain_validated": true,
+      "renewal_runbook": "docs/runbooks/tls-renewal.md",
+      "monitoring_alarm": "tls-expiry-api-example-com",
+      "key_size_bits": 2048,
+      "signature_algorithm": "sha256WithRSAEncryption",
+      "last_rotation_drill_at": "2026-03-15"
+    },
+    {
+      "common_name": "internal-api.example.local",
+      "environment": "prod",
+      "exposure": "private",
+      "expires_at": "2026-07-20"
+    }
+  ]
+}
