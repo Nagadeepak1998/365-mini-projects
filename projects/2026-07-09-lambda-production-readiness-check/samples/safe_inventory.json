@@ -1,0 +1,51 @@
+{
+  "functions": [
+    {
+      "name": "payments-capture-prod",
+      "environment": "prod",
+      "critical": true,
+      "owner": "payments-platform",
+      "runtime": "python3.12",
+      "alias": "live",
+      "trigger": "api_gateway",
+      "timeout_seconds": 20,
+      "memory_mb": 512,
+      "reserved_concurrency": 40,
+      "structured_logging": true,
+      "xray_tracing": true,
+      "async_invoked": false,
+      "dead_letter_queue": null,
+      "on_failure_destination": null,
+      "alarms": ["errors-high", "throttles-high", "duration-p95-high"],
+      "environment_variables": {
+        "LOG_LEVEL": "INFO",
+        "CONFIG_PATH": "/payments/prod/config"
+      },
+      "last_deployed_at": "2026-06-20",
+      "rollback_drill_at": "2026-05-15"
+    },
+    {
+      "name": "invoice-email-worker-prod",
+      "environment": "production",
+      "critical": false,
+      "owner": "billing-platform",
+      "runtime": "nodejs22.x",
+      "alias": "live",
+      "trigger": "sqs",
+      "timeout_seconds": 45,
+      "memory_mb": 256,
+      "reserved_concurrency": 25,
+      "structured_logging": true,
+      "xray_tracing": true,
+      "async_invoked": true,
+      "dead_letter_queue": "invoice-email-worker-dlq",
+      "on_failure_destination": null,
+      "alarms": ["errors-high", "throttles-high"],
+      "environment_variables": {
+        "TEMPLATE_BUCKET": "invoice-email-templates"
+      },
+      "last_deployed_at": "2026-06-01",
+      "rollback_drill_at": "2026-04-20"
+    }
+  ]
+}

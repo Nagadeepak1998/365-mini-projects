@@ -1,0 +1,50 @@
+{
+  "functions": [
+    {
+      "name": "checkout-api-prod",
+      "environment": "prod",
+      "critical": true,
+      "owner": "",
+      "runtime": "nodejs14.x",
+      "alias": "$LATEST",
+      "trigger": "api_gateway",
+      "timeout_seconds": 90,
+      "memory_mb": 64,
+      "reserved_concurrency": null,
+      "structured_logging": false,
+      "xray_tracing": false,
+      "async_invoked": false,
+      "dead_letter_queue": null,
+      "on_failure_destination": null,
+      "alarms": ["errors-high"],
+      "environment_variables": {
+        "PAYMENT_API_TOKEN": "plain-text-token"
+      },
+      "last_deployed_at": "2025-10-01",
+      "rollback_drill_at": "2025-11-01"
+    },
+    {
+      "name": "receipt-email-worker",
+      "environment": "production",
+      "critical": false,
+      "owner": "billing-platform",
+      "runtime": "python3.10",
+      "alias": "",
+      "trigger": "eventbridge",
+      "timeout_seconds": 30,
+      "memory_mb": 256,
+      "reserved_concurrency": 0,
+      "structured_logging": true,
+      "xray_tracing": false,
+      "async_invoked": true,
+      "dead_letter_queue": null,
+      "on_failure_destination": null,
+      "alarms": [],
+      "environment_variables": {
+        "TEMPLATE_BUCKET": "receipt-templates"
+      },
+      "last_deployed_at": "2026-06-01",
+      "rollback_drill_at": null
+    }
+  ]
+}
