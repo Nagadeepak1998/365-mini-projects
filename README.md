@@ -6,6 +6,7 @@ Most folders are intentionally small. The goal is to practice one useful idea at
 
 ## Recent Builds
 
+- [`2026-07-12-k8s-cronjob-reliability-check`](projects/2026-07-12-k8s-cronjob-reliability-check) - Kubernetes CronJob inventory review CLI that flags overlapping runs, missing deadlines, excessive retries, weak job history, missing resource controls, and stale successful-run evidence.
 - [`2026-07-10-iam-access-key-hygiene-check`](projects/2026-07-10-iam-access-key-hygiene-check) - IAM access-key inventory review CLI that flags human static credentials, stale or unused keys, multiple active keys, missing ownership and rotation runbooks, and old inactive keys awaiting deletion.
 - [`2026-07-09-lambda-production-readiness-check`](projects/2026-07-09-lambda-production-readiness-check) - Lambda inventory review CLI that flags missing owners, unsupported runtimes, unpinned production aliases, weak alarms, missing async failure paths, missing concurrency guardrails, inline secret risks, and stale deploy or rollback evidence.
 - [`2026-07-08-tls-certificate-readiness-check`](projects/2026-07-08-tls-certificate-readiness-check) - TLS certificate inventory review CLI that flags missing owners, expired or soon-to-expire public production certificates, missing auto-renewal, missing hostname or chain validation, missing runbooks and alarms, weak key sizes, SHA-1 signatures, and stale rotation drills.
