@@ -1,0 +1,28 @@
+{
+  "backends": [
+    {
+      "name": "payments-production",
+      "environment": "production",
+      "owner": "platform-team",
+      "type": "s3",
+      "bucket": "company-terraform-state",
+      "key": "payments/production.tfstate",
+      "region": "us-west-2",
+      "encryption_enabled": true,
+      "versioning_enabled": true,
+      "public_access_blocked": true,
+      "locking_enabled": true,
+      "last_recovery_drill": "2026-06-15"
+    },
+    {
+      "name": "catalog-production",
+      "environment": "production",
+      "owner": "catalog-platform",
+      "type": "remote",
+      "organization": "example-org",
+      "workspace": "catalog-production",
+      "locking_enabled": true,
+      "last_recovery_drill": "2026-05-20"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "backends": [
+    {
+      "name": "checkout-production",
+      "environment": "production",
+      "owner": "",
+      "type": "local",
+      "gitignored": false,
+      "backup_enabled": false
+    },
+    {
+      "name": "orders-production",
+      "environment": "production",
+      "owner": "orders-team",
+      "type": "s3",
+      "bucket": "orders-state",
+      "key": "",
+      "region": "us-west-2",
+      "encryption_enabled": false,
+      "versioning_enabled": false,
+      "public_access_blocked": false,
+      "locking_enabled": false,
+      "last_recovery_drill": "2025-12-01"
+    }
+  ]
+}
