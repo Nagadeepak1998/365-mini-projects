@@ -1,0 +1,8 @@
+{
+  "node": "worker-2",
+  "pods": [
+    {"namespace": "default", "name": "manual-debug", "owner_kind": null, "safe_to_evict": true, "uses_local_storage": true, "local_data_disposable": false},
+    {"namespace": "payments", "name": "api-4d2a", "owner_kind": "ReplicaSet", "controller_replicas": 1, "ready_replicas_elsewhere": 0, "pdb_allows_eviction": true, "safe_to_evict": true, "uses_local_storage": false},
+    {"namespace": "orders", "name": "worker-8f1b", "owner_kind": "ReplicaSet", "controller_replicas": 3, "ready_replicas_elsewhere": 2, "pdb_allows_eviction": false, "safe_to_evict": false, "uses_local_storage": true, "local_data_disposable": false}
+  ]
+}

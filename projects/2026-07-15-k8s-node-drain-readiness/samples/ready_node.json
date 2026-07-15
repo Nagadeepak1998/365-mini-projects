@@ -1,0 +1,7 @@
+{
+  "node": "worker-1",
+  "pods": [
+    {"namespace": "platform", "name": "log-agent", "owner_kind": "DaemonSet"},
+    {"namespace": "shop", "name": "api-7c9f", "owner_kind": "ReplicaSet", "controller_replicas": 3, "ready_replicas_elsewhere": 2, "pdb_allows_eviction": true, "safe_to_evict": true, "uses_local_storage": false}
+  ]
+}
