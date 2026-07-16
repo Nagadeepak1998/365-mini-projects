@@ -1,0 +1,15 @@
+{
+  "trust_bindings": [
+    {
+      "name": "production-deployer",
+      "owner": "platform-engineering",
+      "issuer": "https://token.actions.githubusercontent.com",
+      "audience": "sts.amazonaws.com",
+      "environment": "production",
+      "approval_required": true,
+      "subjects": ["repo:Nagadeepak1998/example-service:environment:production"],
+      "id_token_permission": "write",
+      "contents_permission": "read"
+    }
+  ]
+}

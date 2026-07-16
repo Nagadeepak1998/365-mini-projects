@@ -1,0 +1,17 @@
+{
+  "trust_bindings": [
+    {
+      "name": "production-deployer",
+      "issuer": "https://token.actions.githubusercontent.com",
+      "audience": "example-cloud",
+      "environment": "production",
+      "approval_required": false,
+      "subjects": [
+        "repo:Nagadeepak1998/*:ref:refs/heads/*",
+        "repo:Nagadeepak1998/example-service:pull_request"
+      ],
+      "id_token_permission": "read",
+      "contents_permission": "write"
+    }
+  ]
+}
