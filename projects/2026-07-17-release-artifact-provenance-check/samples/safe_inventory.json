@@ -1,0 +1,18 @@
+{
+  "artifacts": [
+    {
+      "name": "payments-api:2026.07.17",
+      "owner": "payments-platform",
+      "environment": "production",
+      "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "sbom": {"present": true, "format": "cyclonedx"},
+      "signature": {"verified": true},
+      "provenance": {
+        "verified": true,
+        "source_repository": "github.com/example/payments-api",
+        "source_revision": "7b81bbed"
+      },
+      "promotion": {"digest_matched": true}
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "artifacts": [
+    {
+      "name": "payments-api:latest",
+      "environment": "production",
+      "digest": "latest",
+      "sbom": {"present": false},
+      "signature": {"verified": false},
+      "provenance": {"verified": false},
+      "promotion": {"digest_matched": false}
+    }
+  ]
+}
