@@ -1,0 +1,9 @@
+{
+  "name": "payments-api",
+  "current_rps": 720,
+  "growth_percent": 25,
+  "safe_rps_per_pod": 150,
+  "current_replicas": 6,
+  "hpa_max_replicas": 7,
+  "largest_node_pod_count": 2
+}

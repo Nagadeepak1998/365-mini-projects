@@ -1,0 +1,9 @@
+{
+  "name": "checkout-api",
+  "current_rps": 600,
+  "growth_percent": 50,
+  "safe_rps_per_pod": 150,
+  "current_replicas": 6,
+  "hpa_max_replicas": 10,
+  "largest_node_pod_count": 2
+}
