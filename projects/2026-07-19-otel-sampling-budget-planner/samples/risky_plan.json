@@ -1,0 +1,14 @@
+{
+  "collector_budget_spans_per_second": 500,
+  "services": [
+    {
+      "name": "payments-api",
+      "critical": true,
+      "requests_per_second": 1500,
+      "average_spans_per_trace": 9,
+      "baseline_sample_rate": 0.08,
+      "error_sample_rate": 0.5,
+      "high_latency_sample_rate": 0.25
+    }
+  ]
+}

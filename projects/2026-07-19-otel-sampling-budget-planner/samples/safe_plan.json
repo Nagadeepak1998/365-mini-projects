@@ -1,0 +1,23 @@
+{
+  "collector_budget_spans_per_second": 1500,
+  "services": [
+    {
+      "name": "checkout-api",
+      "critical": true,
+      "requests_per_second": 800,
+      "average_spans_per_trace": 7,
+      "baseline_sample_rate": 0.1,
+      "error_sample_rate": 1.0,
+      "high_latency_sample_rate": 1.0
+    },
+    {
+      "name": "catalog-api",
+      "critical": false,
+      "requests_per_second": 1200,
+      "average_spans_per_trace": 4,
+      "baseline_sample_rate": 0.05,
+      "error_sample_rate": 1.0,
+      "high_latency_sample_rate": 0.5
+    }
+  ]
+}
