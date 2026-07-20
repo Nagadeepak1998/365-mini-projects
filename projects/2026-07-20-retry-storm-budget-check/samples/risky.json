@@ -1,0 +1,24 @@
+{
+  "request_rate_per_second": 100,
+  "downstream_budget_per_second": 500,
+  "services": [
+    {
+      "name": "checkout-api",
+      "max_retries": 2,
+      "timeout_ms": 500,
+      "retry_budget_ms": 1000,
+      "exponential_backoff": false,
+      "jitter": false,
+      "idempotent": true
+    },
+    {
+      "name": "payments-worker",
+      "max_retries": 2,
+      "timeout_ms": 400,
+      "retry_budget_ms": 1000,
+      "exponential_backoff": true,
+      "jitter": false,
+      "idempotent": false
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "request_rate_per_second": 50,
+  "downstream_budget_per_second": 250,
+  "services": [
+    {
+      "name": "inventory-api",
+      "max_retries": 2,
+      "timeout_ms": 200,
+      "retry_budget_ms": 700,
+      "exponential_backoff": true,
+      "jitter": true,
+      "idempotent": true
+    }
+  ]
+}
