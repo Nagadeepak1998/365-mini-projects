@@ -1,0 +1,20 @@
+{
+  "workloads": [
+    {
+      "name": "checkout-api",
+      "owner": "payments-platform",
+      "environment": "production",
+      "replicas": 3,
+      "pod_disruption_budget": true,
+      "handles_sigterm": true,
+      "stops_accepting_work": true,
+      "pre_stop_seconds": 10,
+      "endpoint_removal_seconds": 8,
+      "max_inflight_seconds": 20,
+      "shutdown_buffer_seconds": 5,
+      "termination_grace_period_seconds": 35,
+      "retries_inflight_work": true,
+      "idempotent_processing": true
+    }
+  ]
+}

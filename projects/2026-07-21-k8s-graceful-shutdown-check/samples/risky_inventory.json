@@ -1,0 +1,20 @@
+{
+  "workloads": [
+    {
+      "name": "order-worker",
+      "owner": "",
+      "environment": "production",
+      "replicas": 1,
+      "pod_disruption_budget": false,
+      "handles_sigterm": false,
+      "stops_accepting_work": false,
+      "pre_stop_seconds": 3,
+      "endpoint_removal_seconds": 10,
+      "max_inflight_seconds": 30,
+      "shutdown_buffer_seconds": 5,
+      "termination_grace_period_seconds": 20,
+      "retries_inflight_work": true,
+      "idempotent_processing": false
+    }
+  ]
+}
