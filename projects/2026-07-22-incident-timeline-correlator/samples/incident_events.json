@@ -1,0 +1,30 @@
+[
+  {
+    "timestamp": "2026-07-22T09:45:00Z",
+    "source": "argocd",
+    "type": "deploy",
+    "service": "checkout",
+    "summary": "Deployed checkout-api 2.4.0"
+  },
+  {
+    "timestamp": "2026-07-22T09:58:00Z",
+    "source": "grafana",
+    "type": "alert",
+    "service": "checkout",
+    "summary": "Error rate exceeded 5%"
+  },
+  {
+    "timestamp": "2026-07-22T10:03:00Z",
+    "source": "loki",
+    "type": "log",
+    "service": "checkout",
+    "summary": "Payment client timeout"
+  },
+  {
+    "timestamp": "2026-07-22T09:50:00Z",
+    "source": "argocd",
+    "type": "deploy",
+    "service": "catalog",
+    "summary": "Deployed catalog 1.9.0"
+  }
+]
