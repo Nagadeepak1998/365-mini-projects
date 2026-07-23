@@ -1,0 +1,27 @@
+[
+  {
+    "id": "support-triage-regression",
+    "output": "{\"category\":\"general\",\"notes\":\"customer password was included\"}",
+    "latency_ms": 970,
+    "cost_usd": 0.0031,
+    "contract": {
+      "type": "json",
+      "required_keys": ["category", "escalate", "customer.priority"],
+      "exact_values": {
+        "category": "billing",
+        "escalate": true
+      },
+      "forbidden_terms": ["password"],
+      "max_latency_ms": 800,
+      "max_cost_usd": 0.002
+    }
+  },
+  {
+    "id": "invalid-json-regression",
+    "output": "category: billing",
+    "contract": {
+      "type": "json",
+      "required_keys": ["category"]
+    }
+  }
+]
